@@ -1,0 +1,35 @@
+﻿@using WebApplication3.ViewModel
+@model RunnerDetailViewModel
+
+
+<div class="main-container">
+
+    <section class="bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <div class="media">
+                        <img alt="Image" src="@Model.ProfileImageUrl" class="mr-md-5 avatar avatar-xlg">
+                        <div class="media-body">
+                            <div class="mb-3">
+                                <h1 class="h2 mb-2">@Model.UserName</h1>
+                            </div>
+                            <p class="text-muted">Pace: @Model.Pace</p>
+                            <p class="text-muted">Mileage: @Model.Mileage</p>
+                            <p class="text-muted">State: @Model.State</p>
+                            <p class="text-muted">City: @Model.City</p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <!--end of section-->
+    <!--end of section-->
+
+</div>
