@@ -10,9 +10,12 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #5c5c5c;">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Running Club Groups</a>
+                <a class="navbar-brand" href="#">
+                    <img src="/Img/logo.svg" alt="" width="100" height="60" class="d-inline-block align-text-top">
+                </a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Running Sport Club</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -43,7 +46,7 @@
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Dashbord" asp-action="Index">Dashbrod</a>
                                 </li>
                             <li class="nav-item">
-                                <a class="btn btn-outline-lights" asp-area="" asp-controller="Account" asp-action="Register">LogOut</a>
+                                <a class="btn btn-outline-danger" asp-area="" asp-controller="Account" asp-action="Logout">LogOut</a>
                             </li>
                                 
                             }else{

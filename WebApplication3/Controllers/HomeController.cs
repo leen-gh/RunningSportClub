@@ -10,16 +10,19 @@ namespace WebApplication3.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IClubRepos _clubRepos;
+      
 
-        public HomeController(ILogger<HomeController> logger, IClubRepos clubRepos)
+        public HomeController(ILogger<HomeController> logger, IClubRepos clubRepos, IRaceRepos raceRepos)
         {
             _logger = logger;
             _clubRepos = clubRepos;
+            
         }
 
         public async Task<IActionResult> IndexAsync()
         {
             IEnumerable<Club> clubs = await _clubRepos.GetAll();
+            
             return View(clubs);
         }
 
