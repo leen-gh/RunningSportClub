@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Club>
+﻿@using WebApplication3.ViewModel;
+@model HomeViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -37,7 +38,7 @@
                 <div class="carousel-caption">
                     <h1>Our Running Clubs</h1>
                     <p>You Can Join Our Running Academy Today</p>
-                    <p><a class="btn btn-lg btn-primary" asp-controller="Account" asp-action="Register">Sign Up</a></p>
+                    <p><a class="btn btn-lg btn-primary" asp-controller="Account" asp-action="Login">Login</a></p>
                 </div>
             </div>
         </div>
@@ -62,29 +63,37 @@
 </div>
 <!----------------------------------------------------------------------->
 
-<h1 style="text-align:center; margin-top:10rem; margin-bottom:5rem">Check Our Clubs </h1>
     <div class="album py-5 bg-light">
         <div class="container">
 
          <div class="row">
-         @{int i = 0;}
-        @foreach (var item in Model)
-        {
-                
-                if (i < 4)
+            @{int x = Model.clubs.Count();}
+            @if( x == 0 )
+            {
+                <h1 class="fn-light" style="text-align:center; margin-top:10rem; margin-bottom:5rem">There are no Running Club at your country login and create one! <a asp-area="" asp-controller="Account" asp-action="Login">Login Now </a></h1>
+            }else{
+                <h1 class="fn-light">Running Clubs Near @Model.City, @Model.State</h1>
+                int i = 0;
+                @foreach (var item in Model.clubs)
                 {
-                    <div class="card bg-dark text-white col-md-4" style="width: 19rem;">
-                        <img src=@item.Image class="card-img" alt="...">
-                    <div class=" mb-4 card-img-overlay">
-                    <h5 class="card-title">@item.Title</h5>
-                    <p class="card-text">@item.Description</p>
-                    <a type="button" asp-controller="Club" asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">More Details</a>
-                    </div>
-                    </div>
-                  i++;
-                }else{ break; }
-         }
+                        if (i < 4)
+                        {
+                           
+
+                            <div class="card bg-dark text-white col-md-4" style="width: 19rem;">
+                                <img src=@item.Image class="card-img" alt="...">
+                            <div class=" mb-4 card-img-overlay">
+                            <h5 class="card-title">@item.Title</h5>
+                            <p class="card-text">@item.Description</p>
+                            <a type="button" asp-controller="Club" asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">More Details</a>
+                            </div>
+                            </div>
+                          i++;
+                        }else{ break; }
+                }
+            }
         </div>
+    </div>
     </div>
 
     <h1 style="text-align:center; margin-top:10rem; margin-bottom:5rem"> Also You Can Check Our Races </h1>

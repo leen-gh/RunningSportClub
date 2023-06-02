@@ -131,7 +131,7 @@ namespace WebApplication3.Data
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
-                string adminUserEmail = "teddysmithdeveloper@gmail.com";
+                string adminUserEmail = "newdeveloper@gmail.com";
 
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
@@ -139,7 +139,7 @@ namespace WebApplication3.Data
                 {
                     var newAdminUser = new AppUser()
                     {
-                        UserName = "teddysmithdev",
+                        UserName = "newdeveloper",
                         Email = adminUserEmail,
                         EmailConfirmed = true,
                         Address = new Address()
